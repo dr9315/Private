@@ -1,0 +1,40 @@
+<style>
+* { box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+body { background-color: #0f172a; color: #f8fafc; padding: 2rem; display: flex; justify-content: center; }
+.card { background-color: #1e293b; border-radius: 12px; padding: 2rem; width: 100%; max-width: 550px; box-shadow: 0 10px 25px rgba(0,0,0,0.4); }
+h1 { margin-top: 0; font-size: 1.5rem; border-bottom: 2px solid #334155; padding-bottom: 0.75rem; }
+.form-group { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; }
+input { flex: 1; padding: 0.6rem 0.8rem; border-radius: 6px; border: 1px solid #475569; background: #0f172a; color: #fff; }
+input:focus { outline: 2px solid #38bdf8; }
+button.btn-add { background: #0284c7; color: #fff; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; cursor: pointer; font-weight: bold; }
+button.btn-add:hover { background: #0369a1; }
+ul { list-style: none; padding: 0; margin: 0; }
+li { background: #334155; margin-bottom: 0.5rem; padding: 0.75rem 1rem; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; }
+.badge { padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: bold; cursor: pointer; user-select: none; }
+.badge-pending { background: #eab308; color: #000; }
+.badge-selesai { background: #22c55e; color: #000; }
+.btn-del { background: #ef4444; color: #fff; border: none; padding: 0.3rem 0.6rem; border-radius: 4px; cursor: pointer; font-size: 0.8rem; margin-left: 0.5rem; }
+.btn-del:hover { background: #dc2626; }
+.footer-info { margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #334155; font-size: 0.9rem; color: #94a3b8; display: flex; justify-content: space-between; }
+</style>
+
+
+<div class="footer-info">
+<span>Total Pesanan: <b id="totalItem">0</b></span>
+<span>Total Pendapatan: <b id="totalHarga">Rp 0</b></span>
+</div>
+
+container.innerHTML = pesananList.map(item => `
+      <li>
+        <div>
+          <b>${item.menu} <b> - RP ${item.harga.toLocaleString()}
+          <div>
+            <div>
+              <span class = "badge ${item.status === 'Selesai' ? 'badge-selesai' : 'badge-pending'}"
+              onclick = "ubahStatus (${item.id})" >
+              ${item.status}
+               </span>
+               <button class = "btn-del" onclick = "hapusMenu(${item.id})">Hapus</button>
+              <div>
+        <li>
+        `).join("");

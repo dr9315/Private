@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Coba Vue 3 Mandiri</title>
+  <!-- Load Vue langsung dari CDN via internet -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body style="font-family: sans-serif; padding: 30px;">
+
+  <div id="app">
+    <h2>Halo, {{ nama }}!</h2>
+    
+    <!-- v-model: Menghubungkan input teks langsung ke variabel JS -->
+    <input type="text" v-model="nama" placeholder="Ketik namamu di sini" style="padding: 8px;">
+    
+    <hr style="margin: 20px 0;">
+
+    <p>Total hitungan: <strong>{{ hitungan }}</strong></p>
+    <!-- @click: Pengganti addEventListener('click', ...) -->
+    <button @click="tambah" style="padding: 8px 16px; cursor: pointer;">Tambah Angka</button>
+    <button @click="reset" style="padding: 8px 16px; cursor: pointer; margin-left: 8px;">Reset</button>
+  </div>
+
+  <script>
+    const { createApp, ref } = Vue;
+
+    createApp({
+      setup() {
+        const nama = ref("Teman");
+        const hitungan = ref(0);
+
+        function tambah() {
+          hitungan.value++;
+        }
+
+        function reset() {
+          hitungan.value = 0;
+        }
+
+        // Semua yang ingin dipakai di HTML wajib di-return di sini
+        return { nama, hitungan, tambah, reset };
+      }
+    }).mount('#app');
+  </script>
+
+</body>
+</html>
