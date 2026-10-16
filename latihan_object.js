@@ -455,43 +455,114 @@
 //     console.log(namaOrang + " Punya "  + " skill: " + kemampuan);
 //   }
 
-const daftarPemain = [
+// const daftarPemain = [
+//     {
+//       nama: "Budi",
+//       game: ["Valorant", "Apex"]
+//     },
+//     {
+//       nama: "Siti",
+//       game: ["Minecraft", "Roblox"]
+//     }
+//   ];
+
+//   for (let i = 0; i<daftarPemain.length;i++) {
+//     for (let j =0; j<daftarPemain[i].game.length;j++) {
+//         const IndividuName = daftarPemain[i].nama
+//         const gameName = daftarPemain[i].game[j]
+//         console.log(IndividuName + " Main " + gameName)
+
+//     }
+
+
+//   }
+
+//   const tokoBuku = [
+//     {
+//       kategori: "Komik",
+//       judul: ["Naruto", "One Piece", "Bleach"]
+//     },
+//     {
+//       kategori: "Teknologi",
+//       judul: ["Clean Code", "JavaScript Dasar"]
+//     }
+//   ];
+
+//   for (let i = 0 ; i < tokoBuku.length;i++) {
+//     for (let j =0 ; j<tokoBuku[i].judul.length;j++) { // [0] lalu [1] [2] dst, harus nya begini logika nya 
+//         const klasifikasi = tokoBuku[i].kategori
+//         const title = tokoBuku[i].judul[j] // lewat indeks [0,0] [1,1] dst nya, seterus nya dilemapr ke console.log kumulatif
+//         console.log("Kategori " + klasifikasi + ": " +  title)
+//     }
+//   }
+
+//   const daftarBelanja = [
+//     {
+//       kategori: "Elektronik",
+//       harga: [150000, 350000]
+//     },
+//     {
+//       kategori: "Dapur",
+//       harga: [20000, 50000, 30000]
+//     }
+//   ];
+
+//   let totalBiaya = 0;
+
+//   for (let i =0; i<daftarBelanja.length;i++) {
+//     for(let j =0 ; j<daftarBelanja[i].harga.length;j++) {
+//         const Classification = daftarBelanja[i].kategori
+//         const pay = daftarBelanja[i].harga[j] 
+//         console.log(`Barang ${Classification} : Rp ${pay}`)
+
+//     }
+//   }
+
+// const gudang = [
+//     {
+//       rak: "A1",
+//       stok: [10, 0, 25]
+//     },
+//     {
+//       rak: "B2",
+//       stok: [0, 5, 12, 0]
+//     }
+//   ];
+
+//   for (let i =0;i<gudang.length;i++) {
+//     for (let j = 0; j<gudang[i].stok.length;j++) {
+//         const storage = gudang[i].rak
+//         const jumlahBarang = gudang[i].stok[j]
+
+//         if (jumlahBarang === 0) {
+//             console.log(`Stok habis di Rak ${storage}, dengan jumlah barang : ${jumlahBarang}`)
+//         }
+//     }
+//   }
+
+
+const daftarMenu = [
     {
-      nama: "Budi",
-      game: ["Valorant", "Apex"]
+      kategori: "Kopi",
+      varian: [
+        { nama: "Espresso", harga: 20000 },
+        { nama: "Latte", harga: 30000 }
+      ]
     },
     {
-      nama: "Siti",
-      game: ["Minecraft", "Roblox"]
+      kategori: "Makanan",
+      varian: [
+        { nama: "Croissant", harga: 25000 },
+        { nama: "Toast", harga: 15000 }
+      ]
     }
   ];
 
-  for (let i = 0; i<daftarPemain.length;i++) {
-    for (let j =0; j<daftarPemain[i].game.length;j++) {
-        const IndividuName = daftarPemain[i].nama
-        const gameName = daftarPemain[i].game[j]
-        console.log(IndividuName + " Main " + gameName)
-
-    }
-
-
-  }
-
-  const tokoBuku = [
-    {
-      kategori: "Komik",
-      judul: ["Naruto", "One Piece", "Bleach"]
-    },
-    {
-      kategori: "Teknologi",
-      judul: ["Clean Code", "JavaScript Dasar"]
-    }
-  ];
-
-  for (let i = 0 ; i < tokoBuku.length;i++) {
-    for (let j =0 ; j<tokoBuku[i].judul.length;j++) { // [0] lalu [1] [2] dst, harus nya begini logika nya 
-        const klasifikasi = tokoBuku[i].kategori
-        const title = tokoBuku[i].judul[j] // lewat indeks [0,0] [1,1] dst nya, seterus nya dilemapr ke console.log kumulatif
-        console.log("Kategori " + klasifikasi + ": " +  title)
+  for (let i =0 ; i<daftarMenu.length;i++) {
+    for(let j = 0; j<daftarMenu[i].varian.length;j++) {
+        const classification = daftarMenu[i].kategori
+        const price = daftarMenu[i].varian[j].harga
+        const nama = daftarMenu[i].varian[j].nama
+        console.log(`Menu: ${nama} | Harga: ${price} (Kategori : ${classification})}`)
     }
   }
