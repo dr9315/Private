@@ -541,28 +541,98 @@
 //   }
 
 
-const daftarMenu = [
-    {
-      kategori: "Kopi",
-      varian: [
-        { nama: "Espresso", harga: 20000 },
-        { nama: "Latte", harga: 30000 }
-      ]
-    },
-    {
-      kategori: "Makanan",
-      varian: [
-        { nama: "Croissant", harga: 25000 },
-        { nama: "Toast", harga: 15000 }
-      ]
-    }
-  ];
+// const daftarMenu = [
+//     {
+//       kategori: "Kopi",
+//       varian: [
+//         { nama: "Espresso", harga: 20000 },
+//         { nama: "Latte", harga: 30000 }
+//       ]
+//     },
+//     {
+//       kategori: "Makanan",
+//       varian: [
+//         { nama: "Croissant", harga: 25000 },
+//         { nama: "Toast", harga: 15000 }
+//       ]
+//     }
+//   ];
 
-  for (let i =0 ; i<daftarMenu.length;i++) {
-    for(let j = 0; j<daftarMenu[i].varian.length;j++) {
-        const classification = daftarMenu[i].kategori
-        const price = daftarMenu[i].varian[j].harga
-        const nama = daftarMenu[i].varian[j].nama
-        console.log(`Menu: ${nama} | Harga: ${price} (Kategori : ${classification})}`)
-    }
-  }
+//   for (let i =0 ; i<daftarMenu.length;i++) {
+//     for(let j = 0; j<daftarMenu[i].varian.length;j++) {
+//         const classification = daftarMenu[i].kategori
+//         const price = daftarMenu[i].varian[j].harga
+//         const nama = daftarMenu[i].varian[j].nama
+//         console.log(`Menu: ${nama} | Harga: ${price} (Kategori : ${classification})}`)
+//     }
+//   }
+
+// const user = {
+//     nama: "Daniel",
+//     role : "Developer",
+//     isAktif : true,
+//     poin : 100
+// };
+
+// console.log(user.nama)
+// console.log(user["role"])
+
+// user.poin = 150;
+// user.lokasi = "Jakarta"
+
+// user.sapa = function() {
+//     return `Halo, nama saya ${this.nama} sebagai ${this.role}`
+// }
+
+// console.log(user.sapa())
+// console.log(user)
+
+// Kumpulan data produk
+// const daftarProduk = [
+//     { id: 1, nama: "Keyboard Mechanical", harga: 450000, stok: 5 },
+//     { id: 2, nama: "Mouse Wireless", harga: 150000, stok: 0 },
+//     { id: 3, nama: "Monitor 24 Inch", harga: 1800000, stok: 3 }
+//   ];
+  
+//   // 1. Mengakses object tertentu berdasarkan index array
+//   console.log(daftarProduk[0].nama); // Output: Keyboard Mechanical
+  
+//   // 2. Menambahkan data baru menggunakan .push()
+//   daftarProduk.push({
+//     id: 4,
+//     nama: "Headset Gaming",
+//     harga: 320000,
+//     stok: 8
+//   });
+  
+//   // 3. Iterasi (Looping) untuk membaca seluruh isi data
+//   for (let i = 0; i < daftarProduk.length; i++) {
+//     const item = daftarProduk[i];
+//     const status = item.stok > 0 ? "Tersedia" : "Habis";
+//     console.log(`[${item.id}] ${item.nama} - Rp${item.harga} (${status})`);
+//   }
+
+
+const daftarBuku = [
+
+    {judul: "Pet Dog",penulis: "Marvin", halaman : 45},
+    {judul: "Pet Cat", penulis : "Elvis", halaman : 59},
+];
+
+    daftarBuku.push (
+    {judul:"pet lizard", penulis:"Melvin", halaman: 39}
+)
+
+for (let i = 0; i < daftarBuku.length;i++) {
+    const { judul, penulis, halaman } = daftarBuku[i];
+    // const key = daftarBuku[i]
+    // const judul = key.judul;
+    // const penulis = key.penulis;
+    // const halaman = key.halaman
+
+    // opsional
+    // const judul = daftarBuku[i].judul;
+    // const penulis = daftarBuku[i].penulis;
+    // const halaman = daftarBuku[i].halaman;
+    console.log(`Buku ${judul} ditulis oelh ${penulis} memiliki ${halaman} halaman.`)
+}
